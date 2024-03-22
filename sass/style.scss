@@ -1,0 +1,103 @@
+@import "libs/mixins.scss";
+@import "libs/responsive.scss";
+@import "libs/functions.scss";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.table{
+    width: 100%;
+
+    td{
+        border: 1px solid #ccc;
+    }
+
+    thead{
+        background: #000;
+        color: #fff;
+
+        th{
+            border: 1px solid #ededed;
+        }
+    }
+}
+
+// .btn{
+//     background: rgb(61, 88, 187);
+    
+//     &:hover{
+//         background: rgb(61, 88, 187);
+//     }
+
+//     .theme-vert & {
+//         background: green;
+//     }
+// }
+
+
+// classes abstraites ; Il n'apparait pas dans  le code final mais sert à définir des styles partagés pour plusieurs boutons
+
+$primary : rgb(61, 88, 187);
+%btn{
+    padding: 5px 12px;
+    border-radius: 3px;
+}
+
+.btn{
+
+    @extend %btn;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 5px 12px;
+    background:$primary;
+    color: #fff;
+
+    &:hover{
+        background: darken($color: $primary, $amount: 10);
+    }
+}
+
+$secondary:red;
+.btn-danger{
+    @extend .btn;
+
+    background: $secondary;
+
+    &:hover{
+        background: lighten($color: $secondary, $amount: 10);
+    }
+}
+
+%shaddow{
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+.card{
+    @extend %shaddow;
+    padding: rem(20);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    @include triangle(#FF0000,15px);
+}
+.card-action{
+    @extend .btn;
+}
+
+.card-cancel{
+    @extend .btn-danger;
+}
+
+.card-actions{
+    display: flex;
+}
+
+
+@media #{$medium-up}{
+    .btn{
+        width:100%;
+    }
+}
+
+

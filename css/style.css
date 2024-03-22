@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.table {
+  width: 100%;
+}
+.table td {
+  border: 1px solid #ccc;
+}
+.table thead {
+  background: #000;
+  color: #fff;
+}
+.table thead th {
+  border: 1px solid #ededed;
+}
+
+.btn, .card-action, .btn-danger, .card-cancel {
+  padding: 5px 12px;
+  border-radius: 3px;
+}
+
+.btn, .card-action, .btn-danger, .card-cancel {
+  text-decoration: none;
+  border-radius: 3px;
+  padding: 5px 12px;
+  background: rgb(61, 88, 187);
+  color: #fff;
+}
+.btn:hover, .card-action:hover, .btn-danger:hover, .card-cancel:hover {
+  background: #304695;
+}
+
+.btn-danger, .card-cancel {
+  background: red;
+}
+.btn-danger:hover, .card-cancel:hover {
+  background: #ff3333;
+}
+
+.card {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  padding: 1.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+.card::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-bottom: 15px solid #FF0000;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  position: absolute;
+  bottom: -15px;
+  left: calc(50% - 15px);
+}
+
+.card-actions {
+  display: flex;
+}
+
+@media only screen and (min-width : 768px) {
+  .btn, .btn-danger, .card-action, .card-cancel {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
